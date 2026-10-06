@@ -1,0 +1,136 @@
+.timeline-wrapper {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline-spine {
+  position: absolute;
+  top: 1.5rem;
+  bottom: 2rem;
+  left: 27px;
+  width: 2px;
+  background-color: var(--border-color);
+}
+
+.timeline-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.timeline-entry {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.75rem;
+}
+
+.timeline-node {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.node-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  border: 2px solid var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-green);
+  box-shadow: 0 0 0 4px var(--bg-main);
+}
+
+.timeline-card {
+  flex: 1;
+  padding: 1.85rem;
+  border-radius: var(--radius-lg);
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-color);
+}
+
+.timeline-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.timeline-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.timeline-card-sub {
+  font-size: 0.885rem;
+  font-weight: 500;
+  color: var(--primary-green);
+  display: block;
+  margin-top: 0.15rem;
+}
+
+.timeline-period-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background-color: var(--bg-secondary);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+.timeline-text {
+  font-size: 0.965rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1.15rem;
+}
+
+.timeline-details {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.timeline-detail-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  font-size: 0.885rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.detail-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--primary-green);
+  flex-shrink: 0;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .timeline-wrapper {
+    padding-left: 0;
+  }
+  .timeline-spine {
+    display: none;
+  }
+  .timeline-entry {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}

@@ -1,0 +1,162 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 3.5rem;
+  align-items: flex-start;
+}
+
+.about-narrative {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.narrative-lead {
+  font-size: 1.18rem;
+  color: var(--text-main);
+  line-height: 1.65;
+}
+
+.narrative-lead strong {
+  color: var(--primary-green);
+  font-weight: 600;
+}
+
+.narrative-body {
+  font-size: 1.025rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.about-goal-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  padding: 1.25rem;
+  background-color: var(--light-green-subtle);
+  border: 1px solid #c9e3d2;
+  border-radius: var(--radius-md);
+}
+
+.goal-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background-color: var(--primary-green);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.goal-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--primary-green);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.goal-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+/* About Card */
+.about-card {
+  padding: 2rem;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-color);
+}
+
+.card-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.1rem;
+  margin-bottom: 1.35rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.card-header-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.card-header-status {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary-green);
+  background-color: var(--light-green);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+.info-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.info-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background-color: var(--light-green);
+  color: var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.info-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.info-meta-label {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.info-meta-value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-main);
+  line-height: 1.45;
+}
+
+.college-highlight {
+  font-weight: 600;
+  color: var(--primary-green);
+}
+
+@media (max-width: 860px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}

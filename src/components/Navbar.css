@@ -1,0 +1,291 @@
+/* Floating Capsule Navigation Bar */
+.navbar-header {
+  position: fixed;
+  top: 1.25rem;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  pointer-events: none; /* Allows click through outside the pill */
+  padding: 0 1rem;
+  transition: all var(--transition-smooth);
+}
+
+.navbar-container {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-full);
+  padding: 0.45rem 0.65rem 0.45rem 1.25rem;
+  box-shadow: 0 8px 30px -4px rgba(23, 32, 27, 0.08), 0 2px 8px -2px rgba(47, 107, 79, 0.06);
+  max-width: fit-content;
+  width: auto;
+  transition: all var(--transition-smooth);
+}
+
+.navbar-scrolled .navbar-container {
+  background-color: rgba(255, 255, 255, 0.98);
+  border-color: #c9e3d2;
+  box-shadow: 0 12px 36px -6px rgba(47, 107, 79, 0.14), 0 4px 12px rgba(23, 32, 27, 0.04);
+  transform: translateY(-2px);
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-decoration: none;
+  color: var(--text-main);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  font-size: 0.95rem;
+  padding-right: 0.5rem;
+}
+
+.logo-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background-color: var(--primary-green);
+  color: #FFFFFF;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+}
+
+.logo-name {
+  color: var(--text-main);
+  transition: color var(--transition-fast);
+}
+
+.navbar-logo:hover .logo-name {
+  color: var(--primary-green);
+}
+
+/* Desktop Links */
+.navbar-desktop-nav {
+  display: block;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 0.2rem;
+  background-color: var(--light-green-subtle);
+  padding: 0.25rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+}
+
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.85rem;
+  font-family: var(--font-heading);
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--primary-green);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-link-active {
+  color: #FFFFFF;
+  font-weight: 700;
+  background-color: var(--primary-green);
+  box-shadow: 0 2px 8px rgba(47, 107, 79, 0.25);
+}
+
+.nav-link-active:hover {
+  color: #FFFFFF;
+  background-color: var(--primary-green);
+}
+
+.nav-divider-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: var(--border-color);
+  margin: 0 0.25rem;
+}
+
+.nav-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  background-color: transparent;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.nav-icon-link:hover {
+  color: var(--primary-green);
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(47, 107, 79, 0.12);
+  transform: translateY(-1px);
+}
+
+/* Mobile Hamburger */
+.mobile-toggle-btn {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  padding: 0.4rem;
+  border-radius: var(--radius-full);
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.mobile-toggle-btn:hover {
+  background-color: var(--light-green-subtle);
+  border-color: var(--primary-green);
+  color: var(--primary-green);
+}
+
+/* Mobile Drawer Overlay */
+.mobile-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(23, 32, 27, 0.45);
+  backdrop-filter: blur(4px);
+  z-index: 1050;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.mobile-nav-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-nav-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 290px;
+  height: 100%;
+  background-color: #FFFFFF;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: -4px 0 25px rgba(0, 0, 0, 0.08);
+}
+
+.mobile-nav-overlay.is-open .mobile-nav-panel {
+  transform: translateX(0);
+}
+
+.mobile-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1.25rem;
+}
+
+.mobile-close-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 0.35rem;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-close-btn:hover {
+  color: var(--primary-green);
+}
+
+.mobile-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.mobile-nav-link:hover {
+  background-color: var(--light-green-subtle);
+  color: var(--primary-green);
+}
+
+.mobile-nav-link-active {
+  background-color: var(--light-green);
+  color: var(--primary-green);
+  font-weight: 700;
+}
+
+.mobile-indicator {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  background: #FFFFFF;
+  border: 1px solid #c9e3d2;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  color: var(--primary-green);
+}
+
+.mobile-nav-footer {
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-color);
+}
+
+@media (max-width: 860px) {
+  .navbar-container {
+    width: 100%;
+    max-width: 480px;
+    padding: 0.5rem 0.85rem 0.5rem 1rem;
+  }
+  .navbar-desktop-nav {
+    display: none;
+  }
+  .mobile-toggle-btn {
+    display: flex;
+  }
+}

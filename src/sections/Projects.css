@@ -1,0 +1,207 @@
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.project-minimal-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  transition: all var(--transition-smooth);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-minimal-card:hover {
+  border-color: var(--primary-green);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.project-minimal-card.is-featured {
+  border-color: #c9e3d2;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAFDFB 100%);
+}
+
+.project-minimal-card.is-featured:hover {
+  border-color: var(--primary-green);
+}
+
+.project-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.1rem;
+}
+
+.project-number {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  background-color: var(--light-green);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+}
+
+.featured-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--primary-green);
+  background-color: #FFFFFF;
+  border: 1px solid #c9e3d2;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+.project-main-info {
+  margin-bottom: 1.15rem;
+}
+
+.project-heading {
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.025em;
+  margin-bottom: 0.6rem;
+  transition: color var(--transition-fast);
+}
+
+.project-minimal-card:hover .project-heading {
+  color: var(--primary-green);
+}
+
+.project-summary {
+  font-size: 1.025rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 820px;
+}
+
+.project-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.35rem;
+  padding: 0.85rem 1rem;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+.bullet-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  font-size: 0.865rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.bullet-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--primary-green);
+  flex-shrink: 0;
+  transform: translateY(-2px);
+}
+
+.project-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.75rem;
+}
+
+.proj-tag {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background-color: var(--light-green-subtle);
+  border: 1px solid var(--border-color);
+  padding: 0.28rem 0.65rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.project-minimal-card:hover .proj-tag {
+  border-color: #c9e3d2;
+}
+
+.project-action-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.project-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.primary-link {
+  background-color: var(--primary-green);
+  color: #FFFFFF;
+  box-shadow: 0 1px 3px rgba(47, 107, 79, 0.15);
+}
+
+.primary-link:hover {
+  background-color: #24553e;
+}
+
+.secondary-link {
+  background-color: var(--bg-secondary);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+}
+
+.secondary-link:hover {
+  background-color: #FFFFFF;
+  border-color: var(--primary-green);
+  color: var(--primary-green);
+}
+
+.arrow-icon {
+  transition: transform var(--transition-fast);
+}
+
+.project-link-btn:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+@media (max-width: 640px) {
+  .project-minimal-card {
+    padding: 1.6rem;
+  }
+  .project-action-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .project-link-btn {
+    justify-content: center;
+    width: 100%;
+  }
+}
