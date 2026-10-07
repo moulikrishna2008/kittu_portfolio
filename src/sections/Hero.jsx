@@ -31,7 +31,7 @@ export default function Hero() {
 
             <div className="hero-typography">
               <h1 className="hero-title">
-                Hi, I'm <span className="hero-name-accent">Sri Mouli Krishna Penugonda</span>.
+                Hi, I'm <span className="hero-name-accent">Sri Mouli Krishna Penugonda.</span>
               </h1>
               <h2 className="hero-subhead">
                 I build things with code.
